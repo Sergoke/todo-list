@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   todos =  [
     {title: 'save the world', done: false},
-    {title: 'cook some eggs', done: false}
+    {title: 'cook some eggs', done: false},
+    {title: 'become a hero', done: true},
+    {title: 'go to bed', done: false}
   ];
 }

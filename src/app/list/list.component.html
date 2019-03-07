@@ -1,5 +1,1 @@
-<div *ngFor="let todo of todos">
-  {{todo.title + ' : ' + todo.done}}
-  <app-text-button>Some text</app-text-button>
-  <app-text-button>Some text</app-text-button>
-</div>
+<app-todo-item *ngFor="let todo of todos" [todoItem]="todo"></app-todo-item>

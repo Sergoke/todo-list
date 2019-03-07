@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkbox.component.css']
 })
 export class CheckboxComponent implements OnInit {
+
+  @Input() checked: boolean;
 
   constructor() { }
 

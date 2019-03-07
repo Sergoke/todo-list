@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-todo-input',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoInputComponent implements OnInit {
 
+  @Input() content: string;
+
+  @Output() textSave = new EventEmitter<void>();
+  @Output() textInput = new EventEmitter<string>();
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  todoSave(text) {
+    console.log('salvation...');
+    this.textSave.emit();
+  }
+
+  todoInput(text) {
+    this.textInput.emit(text);
   }
 
 }

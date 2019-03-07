@@ -1,1 +1,1 @@
-<input type="text">
+<input type="text" [value]="content" (input)="todoInput(input.value)" (keyup.enter)="todoSave()" #input autofocus>

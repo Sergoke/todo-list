@@ -1,0 +1,7 @@
+:host {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 2px 2px 3px 2px grey;
+}
