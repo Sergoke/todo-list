@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --success-color: #6bcf22;
+  --warn-color: #f85454;
+}

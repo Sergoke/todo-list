@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+input {
+  padding: 5px;
+  flex: 1;
+  font-size: 15pt;
+}

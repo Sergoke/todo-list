@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-list';
+  todos =  [
+    {title: 'save the world', done: false},
+    {title: 'cook some eggs', done: false}
+  ];
 }
