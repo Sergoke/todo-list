@@ -1,0 +1,11 @@
+:host {
+  margin: 0 10px;
+  display: flex;
+  flex: 1;
+}
+
+input {
+  padding: 4px;
+  flex: 1;
+  font-size: 15pt;
+}

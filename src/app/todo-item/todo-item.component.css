@@ -1,0 +1,22 @@
+:host {
+  margin-bottom: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  transition: .1s;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%, #ededed 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+:host:hover {
+  box-shadow: 1px 1px 3px grey;
+}
+
+.text {
+  margin: 0 10px;
+  flex: 1;
+  font-size: 18pt;
+}

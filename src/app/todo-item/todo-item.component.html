@@ -1,0 +1,11 @@
+<app-checkbox (changed)="todoCheckboxChange()" [checked]="todoItem?.done"></app-checkbox>
+
+<p *ngIf="!edit; else input" class="text">{{todoItem?.title}}</p>
+<ng-template #input>
+  <app-todo-input [content]="todoItem?.title" (textInput)="textInput($event)" (textSave)="updateTodo()"></app-todo-input>
+</ng-template>
+
+<app-text-button *ngIf="!edit" (click)="toggleInput()">Edit</app-text-button>
+<app-text-button *ngIf="edit" (click)="updateTodo()">Save</app-text-button>
+
+<app-icon-button (click)="deleteTodo()" class="warn">delete_forever</app-icon-button>
