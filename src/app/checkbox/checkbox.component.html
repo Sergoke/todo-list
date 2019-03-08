@@ -1,5 +1,5 @@
 <label class="checkbox-wrap">
-  <input type="checkbox" [attr.checked]="checked ? '' : null">
+  <input type="checkbox" (change)="onChange()" [attr.checked]="checked ? '' : null">
   <span class="checkbox-custom"><i class="material-icons">check</i></span>
 </label>
 

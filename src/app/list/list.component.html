@@ -1,3 +1,5 @@
+<header><h1>ToDo List</h1></header>
+
 <app-todo-item *ngFor="let todo of todos; let index = index"
                [todoItem]="todo"
                (todoUpdate)="todoUpdate(index, $event)"

@@ -11,7 +11,6 @@ export class ToDosModel {
   constructor() {
     const todosString = localStorage.getItem('todos');
     this.todos = JSON.parse(todosString) || [];
-    setInterval(() => {console.log(this.getAll()); }, 1000);
   }
 
   getAll(): ToDoItem[] {

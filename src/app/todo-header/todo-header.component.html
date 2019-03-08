@@ -1,3 +1,7 @@
 <app-text-button *ngIf="!add" (click)="add = true">Add new</app-text-button>
-<app-todo-input *ngIf="add" (textSave)="add = false; addItem()" (textInput)="textInput($event)"></app-todo-input>
-<app-text-button *ngIf="add" (click)="add = false; addItem()">Add</app-text-button>
+
+<ng-container *ngIf="add">
+  <app-todo-input (textSave)="add = false; addItem()" (textInput)="textInput($event)"></app-todo-input>
+  <app-icon-button (click)="add = false; addItem()" class="success">done</app-icon-button>
+  <app-icon-button (click)="add = false;" class="warn">clear</app-icon-button>
+</ng-container>

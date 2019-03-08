@@ -34,6 +34,11 @@ export class TodoItemComponent implements OnInit {
     this.todoUpdate.emit(this.todoItem);
   }
 
+  todoCheckboxChange() {
+    this.todoItem.done = !this.todoItem.done;
+    this.todoUpdate.emit(this.todoItem);
+  }
+
   deleteTodo() {
     this.todoDelete.emit();
   }

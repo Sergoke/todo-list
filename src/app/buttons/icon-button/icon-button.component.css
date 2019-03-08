@@ -17,6 +17,6 @@ i:hover {
   color: var(--warn-color);
 }
 
-:host-context(app-header) > :host > i {
-  font-size: 30pt;
+:host-context(app-todo-header) i {
+  font-weight: bold;
 }

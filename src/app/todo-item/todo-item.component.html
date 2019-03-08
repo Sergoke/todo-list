@@ -1,4 +1,4 @@
-<app-checkbox [checked]="todoItem?.done"></app-checkbox>
+<app-checkbox (changed)="todoCheckboxChange()" [checked]="todoItem?.done"></app-checkbox>
 
 <p *ngIf="!edit; else input" class="text">{{todoItem?.title}}</p>
 <ng-template #input>

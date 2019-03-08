@@ -8,10 +8,6 @@ label {
   transition: .2s;
 }
 
-label:hover {
-  box-shadow: 2px 2px 5px 1px grey;
-}
-
 input[type="checkbox"] {
   display: none;
 }
@@ -23,6 +19,10 @@ input[type="checkbox"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: var(--light);
+}
+
+.checkbox-custom:hover {
+  box-shadow: 2px 2px 5px 1px grey;
 }
 
 .checkbox-custom > .material-icons {
