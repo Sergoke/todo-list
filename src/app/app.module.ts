@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { TodoInputComponent } from './todo-input/todo-input.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { TodoHeaderComponent } from './todo-header/todo-header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     ListComponent,
     TodoInputComponent,
     CheckboxComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    TodoHeaderComponent
   ],
   imports: [
     BrowserModule,

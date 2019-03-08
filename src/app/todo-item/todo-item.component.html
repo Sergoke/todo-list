@@ -8,4 +8,4 @@
 <app-text-button *ngIf="!edit" (click)="toggleInput()">Edit</app-text-button>
 <app-text-button *ngIf="edit" (click)="updateTodo()">Save</app-text-button>
 
-<app-icon-button class="warn">delete_forever</app-icon-button>
+<app-icon-button (click)="deleteTodo()" class="warn">delete_forever</app-icon-button>

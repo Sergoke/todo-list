@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToDosModel, ToDoItem } from './todo-model';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  todos =  [
-    {title: 'save the world', done: false},
-    {title: 'cook some eggs', done: false},
-    {title: 'become a hero', done: true},
-    {title: 'go to bed', done: false}
-  ];
+  toDosModel = new ToDosModel();
+  todos = this.toDosModel.getAll();
+
+  constructor() {
+    this.todos.length === 0 && this.toDosModel.add(new ToDoItem('save the women', true));
+  }
 }

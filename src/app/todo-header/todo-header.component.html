@@ -1,0 +1,3 @@
+<app-text-button *ngIf="!add" (click)="add = true">Add new</app-text-button>
+<app-todo-input *ngIf="add" (textSave)="add = false; addItem()" (textInput)="textInput($event)"></app-todo-input>
+<app-text-button *ngIf="add" (click)="add = false; addItem()">Add</app-text-button>

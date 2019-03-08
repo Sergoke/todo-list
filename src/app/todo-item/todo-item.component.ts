@@ -1,13 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ToDoItem} from '../todo-model';
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
-export class TodoItemComponent implements OnInit{
+export class TodoItemComponent implements OnInit {
 
-  @Input() todoItem: Object;
+  @Input() todoItem: any;
+
+  @Output() todoUpdate = new EventEmitter<ToDoItem>();
+  @Output() todoDelete = new EventEmitter<void>();
 
   edit = false;
   currentText = '';
@@ -27,7 +31,11 @@ export class TodoItemComponent implements OnInit{
   updateTodo() {
     this.toggleInput();
     this.todoItem.title = this.currentText;
-    console.log(this.currentText);
+    this.todoUpdate.emit(this.todoItem);
+  }
+
+  deleteTodo() {
+    this.todoDelete.emit();
   }
 
 }

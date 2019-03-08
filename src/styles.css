@@ -3,3 +3,7 @@
   --warn-color: #f85454;
   --light: #eee;
 }
+
+body {
+  margin: 0;
+}
