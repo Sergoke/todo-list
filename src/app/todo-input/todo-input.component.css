@@ -1,6 +1,7 @@
 :host {
   margin: 0 10px;
   display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -8,4 +9,14 @@ input {
   padding: 4px;
   flex: 1;
   font-size: 15pt;
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid var(--warn-color);
+}
+
+.hint {
+  margin: 2px 10px;
+  font-size: 15px;
+  color: var(--warn-color);
 }

@@ -1,46 +1,33 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ToDoItem} from '../todo-model';
+import {Component, Input, OnInit} from '@angular/core';
+import {TodoService} from '../todo.service';
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
 
-  @Input() todoItem: any;
+  @Input() todo: any;
 
-  @Output() todoUpdate = new EventEmitter<ToDoItem>();
-  @Output() todoDelete = new EventEmitter<void>();
+  isEditing = false;
 
-  edit = false;
-  currentText = '';
-
-  ngOnInit() {
-    this.currentText = this.todoItem.title;
-  }
+  constructor(private todoService: TodoService) { }
 
   toggleInput() {
-    this.edit = !this.edit;
+    this.isEditing = !this.isEditing;
   }
 
-  textInput(text) {
-    this.currentText = text;
+  toggleDone(done) {
+    this.todoService.toggleDone(this.todo.id, done);
   }
 
-  updateTodo() {
+  updateTodo(title: string) {
     this.toggleInput();
-    this.todoItem.title = this.currentText;
-    this.todoUpdate.emit(this.todoItem);
-  }
-
-  todoCheckboxChange() {
-    this.todoItem.done = !this.todoItem.done;
-    this.todoUpdate.emit(this.todoItem);
+    this.todoService.update(this.todo.id, title);
   }
 
   deleteTodo() {
-    this.todoDelete.emit();
+    this.todoService.delete(this.todo.id);
   }
-
 }

@@ -1,28 +1,29 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {TodoService} from '../todo.service';
 
 @Component({
   selector: 'app-todo-header',
   templateUrl: './todo-header.component.html',
   styleUrls: ['./todo-header.component.css']
 })
-export class TodoHeaderComponent implements OnInit {
+export class TodoHeaderComponent {
 
-  @Output() todoAdd = new EventEmitter<string>();
+  private isAdding = false;
 
-  add = false;
-  title: string;
+  constructor(private todoService: TodoService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  private addTodo(title: string) {
+    this.todoService.add(title).then(res => {
+      console.log('added new item');
+      console.dir(res);
+      this.toggleInput();
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
-  addItem() {
-    this.todoAdd.emit(this.title);
-  }
-
-  textInput(text: string) {
-    this.title = text;
+  private toggleInput() {
+    this.isAdding = !this.isAdding;
   }
 
 }

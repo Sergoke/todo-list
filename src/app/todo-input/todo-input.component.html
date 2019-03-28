@@ -1,1 +1,3 @@
-<input type="text" [value]="content || ''" (input)="todoInput(input.value)" (keyup.enter)="todoSave()" #input autofocus>
+<input type="text" (keyup.enter)="onKeyEnter()" [(ngModel)]="value" required #input="ngModel" autofocus>
+
+<p *ngIf="input.touched && input.invalid" class="hint">Поле должно быть заполненно</p>

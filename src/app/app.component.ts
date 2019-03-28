@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToDosModel, ToDoItem } from './todo-model';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,4 @@ import { ToDosModel, ToDoItem } from './todo-model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  toDosModel = new ToDosModel();
-
-  constructor() {
-  }
 }

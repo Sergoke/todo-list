@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-text-button',
-  templateUrl: './text-button.component.html',
+  template: `
+    <button>
+      <ng-content></ng-content>
+    </button>
+  `,
   styleUrls: ['./text-button.component.css']
 })
-export class TextButtonComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class TextButtonComponent { }

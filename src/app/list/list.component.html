@@ -1,9 +1,3 @@
 <header><h1>ToDo List</h1></header>
-
-<app-todo-item *ngFor="let todo of todos; let index = index"
-               [todoItem]="todo"
-               (todoUpdate)="todoUpdate(index, $event)"
-               (todoDelete)="todoDelete(index)">
-</app-todo-item>
-
-<app-todo-header (todoAdd)="todoAdd($event)"></app-todo-header>
+<app-todo-item *ngFor="let todo of todoService.todos" [todo]="todo"></app-todo-item>
+<app-todo-header></app-todo-header>

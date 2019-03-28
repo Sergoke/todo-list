@@ -8,9 +8,6 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
   imports: [
     CommonModule
   ],
-  exports: [
-    TextButtonComponent,
-    IconButtonComponent
-  ]
+  exports: [TextButtonComponent, IconButtonComponent]
 })
 export class ButtonsModule { }

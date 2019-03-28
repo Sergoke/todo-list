@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { ButtonsModule} from './buttons/buttons.module';
 
@@ -21,6 +25,9 @@ import { TodoHeaderComponent } from './todo-header/todo-header.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     ButtonsModule
   ],
   providers: [],

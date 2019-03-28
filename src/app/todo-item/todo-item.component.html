@@ -1,11 +1,13 @@
-<app-checkbox (changed)="todoCheckboxChange()" [checked]="todoItem?.done"></app-checkbox>
+<app-checkbox (checkboxToggled)="toggleDone($event)" [checked]="todo?.done"></app-checkbox>
 
-<p *ngIf="!edit; else input" class="text">{{todoItem?.title}}</p>
-<ng-template #input>
-  <app-todo-input [content]="todoItem?.title" (textInput)="textInput($event)" (textSave)="updateTodo()"></app-todo-input>
+<ng-container *ngIf="!isEditing; else inputContainer">
+  <p class="text">{{todo?.title}}</p>
+  <app-text-button (click)="toggleInput()">Edit</app-text-button>
+</ng-container>
+
+<ng-template #inputContainer>
+  <app-todo-input [value]="todo?.title" (keyEnter)="updateTodo($event)" #input></app-todo-input>
+  <app-text-button (click)="updateTodo(input.value)">Save</app-text-button>
 </ng-template>
-
-<app-text-button *ngIf="!edit" (click)="toggleInput()">Edit</app-text-button>
-<app-text-button *ngIf="edit" (click)="updateTodo()">Save</app-text-button>
 
 <app-icon-button (click)="deleteTodo()" class="warn">delete_forever</app-icon-button>
